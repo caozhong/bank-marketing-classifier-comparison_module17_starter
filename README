@@ -1,0 +1,50 @@
+# Comparing Classifiers for Bank Marketing
+
+## Business Objective
+
+The objective of this project is to predict whether a bank customer will subscribe to a term deposit following a telephone marketing campaign.
+
+## Models Compared
+
+The following classification algorithms were evaluated:
+
+- Logistic Regression
+- K-Nearest Neighbors (KNN)
+- Decision Tree
+- Support Vector Machine (SVM)
+
+## Baseline
+
+The majority-class baseline accuracy was 88.73%.
+
+## Initial Model Results
+
+Logistic Regression achieved 88.74% test accuracy, only slightly above the baseline. KNN achieved 87.85%, Decision Tree 86.44%, and SVM 88.64%.
+
+Because the target variable is imbalanced, accuracy alone can be misleading.
+
+## Model Improvement
+
+GridSearchCV was used to tune model hyperparameters. F1 score was selected as the primary tuning metric because it balances precision and recall for the minority class of customers who subscribe.
+
+The tuned Decision Tree produced the highest F1 score of approximately 0.2622. SVM achieved a similar F1 score of 0.2594 but required substantially more computation time.
+
+## Business Findings
+
+The results indicate that customer demographic and financial information alone provides limited ability to predict term-deposit subscriptions.
+
+The tuned Decision Tree provided the best balance of F1 performance and computational efficiency. If identifying as many potential subscribers as possible is the primary business objective, Logistic Regression or SVM may also be useful because of their higher recall.
+
+## Next Steps
+
+Future work could include:
+
+- Adding campaign and economic features.
+- Evaluating additional class-imbalance techniques.
+- Optimizing the classification threshold.
+- Evaluating ROC-AUC and precision-recall curves.
+- Performing additional feature engineering.
+
+## Notebook
+
+[View the Jupyter Notebook](practical_application_III.ipynb)
